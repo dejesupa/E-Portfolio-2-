@@ -226,6 +226,14 @@ PROJECTS
 
 */
 
+.project {
+    margin-bottom: 135px;
+}
+
+.project:last-child {
+    margin-bottom: 40px;
+}
+
 .project__img {
     width: 100%;
     transition: all 500ms ease;
@@ -264,7 +272,7 @@ PROJECTS
 
 .project:hover .project__description {
     opacity: 1;
-     transform: translateY(100%);
+     transform: translateY(-50%);
 }
 
 .project__list {
@@ -275,11 +283,11 @@ PROJECTS
     position: absolute;
     top: 50%;
     left: 90px;
-    transform: translateY(-50%);
+    transform: translateY(100%);
     max-width: 550px;
     z-index: 3;
     opacity: 0;
-    transition: opacity;
+    transition: transform 450ms, opacity 300ms;
 }
 
 .project__description--title {

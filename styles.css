@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -32,6 +33,10 @@ li {
     flex: 1;
 }
 
+.container {
+    padding: 50px 0;
+}
+
 .row {
     width: 100%;
     max-width: 800px;
@@ -42,9 +47,17 @@ li {
     color: #6030b1;
 }
 
+section:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.section__title {
+    margin-bottom: 20px;
+}
+
 /* 
 
-NAVIGATION 
+NAVIGATION BAR
 
 */
 
@@ -101,11 +114,19 @@ ABOUT ME
     flex-direction: column;
 }
 
+.about-me__info {
+    display: flex;
+    flex-direction: column;
+}
+
 .about-me__info--container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .about-me__picture--mask {
@@ -120,16 +141,165 @@ ABOUT ME
 .about-me__picture {
     width: 100%;
 }
-
-/* Improving my own picture */
-    transform: scale(1.5);
-    padding-top: 8px; 
-
 .about-me__info--title {
-   margin-bottom: 16px;
-}
+    margin-bottom: 16px;
+    }
 
 .about-me__info--para {
     font-size: 20px;
     margin-bottom: 28px;
+}
+
+.about-me__link {
+    font-size: 20px;
+    color: #242424;
+    text-decoration: none;
+    padding: 0 16px;
+}
+
+.about-me__img {
+    width: 100%;
+}
+
+.about-me__img--container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+/*
+
+TECH STACK
+
+*/
+
+.language__img {
+    width: 100%;
+    max-width: 100px;
+    transition: all 300ms ease;
+}
+
+.language:hover .language__img {
+    filter: brightness(80%);
+    opacity: 0.86;
+    transform: scale(0.9);
+}
+
+.language {
+      width: 25%;
+      display: flex;
+      justify-content: center;
+      position: relative;
+}
+
+.language__img--wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 16px;
+}
+
+.language__list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.language__name {
+    position: absolute;
+    bottom: 0;
+    transform: scale(0);
+    transition: all 300ms ease;
+    font-size: 20px;
+    opacity: 0;
+}
+
+.language:hover .language__name {
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+/*
+
+PROJECTS
+
+*/
+
+.project__img {
+    width: 100%;
+    transition: all 500ms ease;
+    
+}
+
+.project__wrapper {
+    display: flex;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project__wrapper:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #1c1d25;
+    opacity: 0;
+    transition: opacity 450ms ease;
+    z-index: 2;
+}
+
+.project:hover .project__wrapper:before {
+    opacity: 0.7;
+}
+
+.project:hover .project__img {
+    transform: scale(1.07);
+    filter: blur(5px);
+}
+
+.project:hover .project__description {
+    opacity: 1;
+     transform: translateY(100%);
+}
+
+.project__list {
+    padding-top: 40px;
+}
+
+.project__description {
+    position: absolute;
+    top: 50%;
+    left: 90px;
+    transform: translateY(-50%);
+    max-width: 550px;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity;
+}
+
+.project__description--title {
+    font-size: 40px;
+}
+
+.project__description--para {
+    margin: 16px 0;
+}
+
+.project__description--link {
+    font-size: 20px;
+    margin-right: 16px;
+    text-decoration: none;
+}
+
+.project__description--title,
+.project__description--sub-title,
+.project__description--para,
+.project__description--link {
+    text-align: left;
+    color: #fff;
 }
